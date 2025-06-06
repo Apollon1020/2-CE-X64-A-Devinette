@@ -1,0 +1,76 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f06, #48f);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Conteneur principal */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre principal */
+h1 {
+    margin: 0 0 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #ffdd57;
+}
+
+/* Paragraphe */
+p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Champ de saisie */
+input[type="number"] {
+    font-size: 1rem;
+    padding: 10px;
+    width: 200px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid #ffdd57;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Bouton */
+button {
+    font-size: 1rem;
+    background: #ffdd57;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #ffc107;
+}
+
+/* Feedback */
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    min-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

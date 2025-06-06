@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeu de Devinette</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <script src="devinette.js">
-        // Jeu de devinette de nombre
+    <div class="container">
+        <h1>Jeu de Devinette</h1>
+        <p>Devinez le nombre mystère entre <span id="min">1</span> et <span id="max">100</span>.</p>
+        <input type="number" id="guess" placeholder="Entrez un nombre" />
+        <button id="submit">Deviner</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        const min = 1;
+        const max = 100;
+        const nombreMystere = Math.floor(Math.random() * (max - min + 1)) + min;
+        let tentatives = 0;
 
-        
+        document.getElementById('submit').addEventListener('click', () => {
+            const guessInput = document.getElementById('guess');
+            const feedback = document.getElementById('feedback');
+            const proposition = parseInt(guessInput.value);
+            tentatives++;
 
+            if (isNaN(proposition)) {
+                feedback.textContent = "Veuillez entrer un nombre valide.";
+            } else if (proposition < nombreMystere) {
+                feedback.textContent = "C'est plus !";
+            } else if (proposition > nombreMystere) {
+                feedback.textContent = "C'est moins !";
+            } else {
+                feedback.textContent = `Félicitations ! Vous avez trouvé le nombre ${nombreMystere} en ${tentatives} tentative(s).`;
+                document.getElementById('submit').disabled = true;
+                guessInput.disabled = true;
+            }
+
+            guessInput.value = "";
+            guessInput.focus();
+        });
     </script>
 </body>
-
 </html>
